@@ -1,0 +1,32 @@
+Update makefiles to install uapi headers as part of install target.
+
+.
+ libbpf (0.0.5-1) unstable; urgency=medium
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Author: unknown <vagrant@unknown>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- libbpf-0.0.5.orig/src/Makefile
++++ libbpf-0.0.5/src/Makefile
+@@ -105,7 +105,7 @@ define do_s_install
+ 	cp -fpR $1 '$(DESTDIR)$2'
+ endef
+
+-install: all install_headers install_pkgconfig
++install: all install_headers install_pkgconfig install_uapi_headers
+ 	$(call do_s_install,$(LIBS),$(LIBDIR))
+
+ install_headers:
