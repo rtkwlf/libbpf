@@ -1,0 +1,23 @@
+Source: libbpf
+Priority: optional
+Maintainer: Arctic Wolf Networks Inc. Development <dev@arcticwolf.com>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.6
+Section: libs
+Homepage: https://github.com/libbpf/libbpf
+#Vcs-Git: git://anonscm.debian.org/collab-maint/libbpf.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/libbpf.git
+
+Package: libbpf-dev
+Section: libdevel
+Architecture: any
+Depends: libbpf0 (= ${binary:Version}), ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+
+Package: libbpf
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: eBPF helper library (shared library)
+ libbpf is a library for loading eBPF programs and reading and manipulating
+ eBPF objects from user-space.

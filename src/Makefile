@@ -105,7 +105,7 @@ define do_s_install
 	cp -fpR $1 '$(DESTDIR)$2'
 endef
 
-install: all install_headers install_pkgconfig
+install: all install_headers install_pkgconfig install_uapi_headers
 	$(call do_s_install,$(LIBS),$(LIBDIR))
 
 install_headers:
