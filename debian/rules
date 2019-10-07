@@ -22,7 +22,9 @@ DIR := $(CURDIR)/debian/libbpf0
 
 %:
 	dh $@ --sourcedirectory=src
-#override_dh_auto_install:
+override_dh_auto_install:
+	dh_auto_install
+	ln -sf ../lib64/libbpf.so.0.0.5 $(CURDIR)/debian/libbpf/usr/lib/libbpf.so
 #	dh_testdir
 #	dh_testroot
 #	dh_prep
